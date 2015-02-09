@@ -1,0 +1,208 @@
+body {
+    overflow: hidden;
+}
+
+.container {
+    max-width: 730px;
+    margin-top: 50px;
+    margin-left: 240px;
+}
+
+.container-heading {
+    margin-top: -30px;
+}
+
+h1, h2, h3 {
+    font-family: sans-serif;
+}
+
+h2 {
+    margin: .5em 0 .2em;
+    padding: 0;
+}
+
+textarea {
+    height: 6em;
+    width: 100%;
+    display: block;
+    -webkit-appearance: none;
+    padding: .3em;
+    font-family: monospace;
+}
+
+.group {
+    padding: 1em;
+}
+.result {
+    padding: 1em;
+    border: 1px solid #eee;
+    margin-bottom: 2em;
+    overflow: auto;
+    margin-top: 20px;
+    height: 350px;
+}
+
+
+.dark {
+    background: #333;
+}
+
+.brand-logo {
+    margin-left: 20px;
+}
+
+#nav-mobile {
+    height: 600px;
+    margin-top: 64px;
+    overflow: auto;
+    position: absolute !important;
+}
+
+span.badge.new:after {
+    content: "GET";
+    position: relative;
+    top: -10px;
+}
+
+span.badge.new {
+    float: left;
+    height: 20px;
+/*  margin-top: 14px;*/
+    margin-right: 20px;
+    margin-top: 1px;
+}
+
+.dropdown-menu {
+    background: #FFFFFF;
+}
+
+.dropdown-menu li {
+    width: 210px !important;
+    cursor: pointer;
+}
+
+ul.side-nav.full li, ul.side-nav.fixed li {
+    line-height: 40px;
+}
+
+.side-nav-list-heading {
+    position: relative;
+    left: 10px;
+    top: 2px;
+    text-transform: uppercase;
+}
+
+.loading-indicator {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.filters-dropdown {
+    margin-top: 20px;
+}
+
+.filter-badge {
+    background: none repeat scroll 0 0 #26a69a;
+    text-align: center;
+    border-radius: 2px;
+    font-size: 12px !important;
+    height: 24px;
+    margin-top: 8px;
+}
+
+.filter-badge-list {
+    background: none repeat scroll 0 0 #26a69a;
+    text-align: center;
+    color: white !important;
+    height: 24px;
+    border-radius: 2px;
+    margin-left: 10px;
+    font-size: 12px !important
+}
+
+.filter-badge-list span {
+    position: relative;
+    top: -20px !important;
+}
+
+.filter-badge span {
+    color: white;
+    position: relative;
+    top: -9px;
+}
+
+.badge-name {
+    background: none repeat scroll 0 0 #26a69a;
+    border-radius: 2px;
+    color: white !important;
+    height: 20px;
+    margin-top: 10px;
+}
+
+.badge-name span {
+    position: relative !important;
+    top: -10px !important;
+}
+
+.query-string {
+    left: -3px;
+    position: relative;
+}
+
+.query-string-holder {
+    border: 1px solid #eee;
+    border-radius: 2px;
+    padding: 8px;
+    width: 75%;
+    float: left
+}
+
+.submit-api-call {
+    width: 130px;
+    margin-left: 40px;
+    margin-top: 15px;
+}
+
+#add-field {
+    display: none;
+    color: white;
+    padding: 0px 6px;
+    float: right;
+}
+
+ul.side-nav.full li, ul.side-nav.fixed li {
+    width: 240px !important;
+    padding: 0 10px;
+}
+
+ul.side-nav.full, ul.side-nav.fixed {
+    font-size: 12px !important;
+    width: 240px !important;
+}
+
+.filter-label {
+    line-height: 16px !important;
+}
+
+.query-string-div {
+    margin-top: -20px;
+}
+
+.mdi-action-highlight-remove {
+    color: #E52839;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.field-name {
+    font-size: 16px;
+    position: relative;
+    top: -4px;
+}
+
+ul.side-nav.full a, ul.side-nav.fixed a {
+    color: #444;
+    display: block;
+    padding: 0 2px;
+}

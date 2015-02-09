@@ -1,0 +1,153 @@
+<!doctype html>
+<html ng-app="JsonFormatter">
+<head>
+    <meta charset="utf-8">
+    <title>Executive Dashboard - API Explorer</title>
+
+    <script src="bower_components/angular.min.js"></script>
+    <script src="bower_components/angular-sanitize.min.js"></script>
+    <script src="bower_components/ui-bootstrap-custom-0.12.0.min.js"></script>
+    <script src="bower_components/ui-bootstrap-custom-tpls-0.12.0.min.js"></script>
+    <!--
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  -->
+    <link rel="stylesheet" href="bower_components/materialize/dist/css/materialize.min.css">
+
+    <link rel="stylesheet" href="css/json-formatter.css"></div>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body ng-controller="MainCtrl">
+
+    <nav>
+        <div class="nav-wrapper">
+            <div class="col s12">
+                <a href="#!" class="brand-logo">API Explorer</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <h4 class="container-heading">JSON Output</h4>
+
+
+        <loading-animation></loading-animation>
+
+        <div class="row">
+            <div class="input-field col s4">
+                <input type="text" number-mask="" min="0" max="99" ng-model="pageFilter" id="page-filter">
+                <label for="page-filter">Page</label>
+            </div>
+            <div class="input-field col s4">
+                <input type="text" number-mask="" min="0" max="99" ng-model="limitFilter" id="limit-filter">
+                <label for="limit-filter">Limit</label>
+            </div>
+
+            <div class="input-field col s4">
+                <input type="checkbox" ng-model="detailsFilter" ng-true-value="1" ng-false-value="0" id="detailsFilter" />
+                <label for="detailsFilter">Details</label>
+            </div>
+        </div>
+
+        <div class="query-string-div">
+            <p class="query-string-holder">
+                <span>{{ searchQueryString }}</span>
+                <span class="query-string">?q={{ customQueryFields | toStringArray }}</span>
+                <span class="query-string" ng-show="countries.length > 0">&country={{ countries | toStringArray }}</span>
+                <span class="query-string" ng-show="languages.length > 0">&language={{ languages | toStringArray }}</span>
+                <span class="query-string" ng-show="networks.length > 0">&network={{ networks | toStringArray }}</span>
+                <span class="query-string" ng-show="organizations.length > 0">&organization={{ organizations | toStringArray }}</span>
+                <span class="query-string" ng-show="pageFilter.length > 0">&page={{ pageFilter }}</span>
+                <span class="query-string" ng-show="limitFilter.length > 0">&limit={{ limitFilter }}</span>
+                <span class="query-string" ng-show="detailsFilter == 1">&details={{ detailsFilter }}</span>
+            </p>
+            <a class="waves-effect waves-light btn submit-api-call" ng-click="submit()">Submit</a>
+        </div>
+
+
+
+
+        <div class="result" ng-style="{opacity: isLoading && '.3' || '1'}">
+            <div class="col-xs-12">
+                <json-formatter json="textareaJson" open="10"></json-formatter>
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <ul class="side-nav fixed" id="nav-mobile">
+
+        <span class="side-nav-list-heading">Endpoints</span>
+        <li ng-repeat="filter in initialFilters" class="bold">
+            <a ng-click="selectFilter( filter.name )" href="#!"><span class="new badge" style="margin-top: 10px"></span> /{{ filter.name }}</a>
+        </li>
+
+        <span ng-show="searchFields" class="side-nav-list-heading">Fields</span>
+        <li ng-repeat="field in fields" class="bold">
+            <p>
+              <!--  <input type="checkbox" id="test-{{$index}}" checked="checked" ng-click="uncheckField(field)"/> -->
+                <i class="mdi-action-highlight-remove" ng-click="uncheckField(field)"></i>
+                <label class="field-name">{{ field.name }} <span class="badge badge-name"><span>{{ field.filter }}</span></span></label>
+            </p>
+        </li>
+
+        <li ng-show="searchFields" style="background: none repeat scroll 0 0 white; height: 400px; overflow: auto; font-size: 12px">
+            <input type="text" id="typeahead-filters" ng-model="selected" placeholder="Type a field" typeahead-min-length="2" typeahead="filter.htmlName for filter in initialFilterData | filter:$viewValue | limitTo:7" typeahead-editable="false">
+            <a id="add-field" ng-click="addField()" class="waves-effect waves-light btn">+ Add Field</a>
+        </li>
+
+
+
+    </ul>
+
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="bower_components/materialize/dist/js/materialize.min.js"></script>
+    <script src="bower_components/jquery.numeric.min.js"></script>
+
+    <script src="js/module.js"></script>
+    <script src="bower_components/json-formatter.min.js"></script>
+
+    <script src="js/services/services.js"></script>
+    <script src="js/filters/filters.js"></script>
+    <script src="js/directives/directives.js"></script>
+    <script src="js/controllers/json-format.js"></script>
+
+    <script>
+
+        $(function () {
+            $('.dropdown-button').dropdown({
+                inDuration: 300,
+                outDuration: 225,
+                constrain_width: false, // Does not change width of dropdown to that of the activator
+                hover: false, // Activate on click
+                alignment: 'left', // Aligns dropdown to left or right edge (works with constrain_width)
+                gutter: 0 // Spacing from edge
+            }
+            );
+
+            $('#typeahead-filters').on('keyup', function (){
+                var length = $('.dropdown-menu li').length;
+                var stringLength = $('#typeahead-filters').val().length;
+
+                if (length === 0) {
+                    $('#add-field').show();
+                } else {
+                    $('#add-field').hide();
+                }
+
+                if (stringLength === 0) {
+                    $('#add-field').hide();
+                }
+
+            });
+
+            $('#add-field').on('click', function() {
+                $('#add-field').hide();
+            });
+        });
+    </script>
+
+</body>
+</html>
