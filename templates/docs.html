@@ -1,0 +1,590 @@
+<section>
+    <h4>Docs - API Reference</h4>
+
+    <h5 class="markdown-header-api">/api/contents</h5>
+    <p>Content - the main endpoint displays CXP content items</p>
+    <h5 id="markdown-header-parameters">Parameters</h5>
+    <table class="striped">
+        <thead>
+        <tr>
+            <th align="left">Param</th>
+            <th>Description</th>
+            <th align="center">type</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td align="left">details</td>
+            <td>Show all fields including embedded</td>
+            <td align="center">bool</td>
+        </tr>
+        <tr>
+            <td align="left">page</td>
+            <td>Page number</td>
+            <td align="center">integer</td>
+        </tr>
+        <tr>
+            <td align="left">limit</td>
+            <td>Number of results to return</td>
+            <td align="center">integer</td>
+        </tr>
+        </tbody>
+    </table>
+    <h5 id="markdown-header-properties">Properties</h5>
+    <table class="striped">
+        <thead>
+        <tr>
+            <th align="left">Name</th>
+            <th>Description</th>
+            <th align="center">Example value</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td align="left">uuid</td>
+            <td>Unique id</td>
+            <td align="center">4516f483-2112-5036-a86f-09385814fca2</td>
+        </tr>
+        <tr>
+            <td align="left">title</td>
+            <td>Content title</td>
+            <td align="center">Iraqi forces raid ISIL headquarters in Baghdad</td>
+        </tr>
+        <tr>
+            <td align="left">description</td>
+            <td>Content description/summary</td>
+            <td align="center">Despite its location in the middle of a residential neighbourhood, the raid was conducted with no civilian casualties and uncovered large stocks of ammunition.</td>
+        </tr>
+        <tr>
+            <td align="left">pub_date</td>
+            <td>The content publication date</td>
+            <td align="center">2014-12-31 00:05:00 -0500</td>
+        </tr>
+        <tr>
+            <td align="left">keywords</td>
+            <td>List of keywords/categories</td>
+            <td align="center">entrepreneurship; innovation; business</td>
+        </tr>
+        <tr>
+            <td align="left">_embedded</td>
+            <td>Embedded content. Including articles, audios, videos, images, photo_galleries, transcripts, and <a href="http://www.opencalais.com/">OpenCalais semantic metadata</a></td>
+            <td align="center">{}</td>
+        </tr>
+        <tr>
+            <td align="left">network</td>
+            <td>A <a href="#apiv1networks">network</a></td>
+            <td align="center">{}</td>
+        </tr>
+        <tr>
+            <td align="left">organization</td>
+            <td>An <a href="#apiv1organizations">organization</a></td>
+            <td align="center">{}</td>
+        </tr>
+        <tr>
+            <td align="left">language</td>
+            <td>A <a href="#apiv1languages">language</a></td>
+            <td align="center">{}</td>
+        </tr>
+        </tbody>
+    </table>
+    <h5 id="markdown-header-_embedded">_embedded</h5>
+    <p>Additionally, content item's may have the following embedded objects:
+        <a href="#articles">Articles</a>, <a href="#videos">Videos</a>, <a href="#audios">Audios</a>, <a href="#images">Images</a>, and Photo Galleries</p>
+    <h5 id="markdown-header-articles">Articles</h5>
+    <table class="striped">
+        <thead>
+        <tr>
+            <th align="left">Name</th>
+            <th>Description</th>
+            <th align="center">Example value</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td align="left">uuid</td>
+            <td>Unique id</td>
+            <td align="center">6748dc75-5673-50f3-821f-7108cb5417c9</td>
+        </tr>
+        <tr>
+            <td align="left">format</td>
+            <td>the article body format (ie. plaintext or html)</td>
+            <td align="center">html</td>
+        </tr>
+        <tr>
+            <td align="left">url</td>
+            <td>link to article on the web</td>
+            <td align="center">https://www.bbgdirect.com/english/node/214576</td>
+        </tr>
+        <tr>
+            <td align="left">body</td>
+            <td>the full text article</td>
+            <td align="center">&amp;lt;p&amp;gt;This is an article&amp;lt;/p&amp;gt;</td>
+        </tr>
+        <tr>
+            <td align="left">byline</td>
+            <td>article author/credit</td>
+            <td align="center">Mark Twain</td>
+        </tr>
+        <tr>
+            <td align="left">pub_date</td>
+            <td>The article publication date</td>
+            <td align="center">2014-12-31 00:05:00 -0500</td>
+        </tr>
+        </tbody>
+    </table>
+    <h5 id="markdown-header-videos">Videos</h5>
+    <table class="striped">
+        <thead>
+        <tr>
+            <th align="left">Name</th>
+            <th>Description</th>
+            <th align="center">Example value</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td align="left">uuid</td>
+            <td>Unique id</td>
+            <td align="center">6748dc75-5673-50f3-821f-7108cb5417c9</td>
+        </tr>
+        <tr>
+            <td align="left">mimetype</td>
+            <td>the media MIME Type</td>
+            <td align="center">video/mp4</td>
+        </tr>
+        <tr>
+            <td align="left">url</td>
+            <td>link to the media item</td>
+            <td align="center">http://av.voanews.com/Videoroot/Pangeavideo/2014/12/8/85/8b35-515521ed64a3_mobile.mp4</td>
+        </tr>
+        <tr>
+            <td align="left">quality</td>
+            <td>the video quality (allowed values:hd1080, hd720, 480p, 360p, 270p, 240p, highres, large, medium, small)</td>
+            <td align="center">hd720</td>
+        </tr>
+        <tr>
+            <td align="left">bitrate</td>
+            <td>the bitrate</td>
+            <td align="center">223923</td>
+        </tr>
+        <tr>
+            <td align="left">duration</td>
+            <td>the duration in seconds</td>
+            <td align="center">3600</td>
+        </tr>
+        <tr>
+            <td align="left">filesize</td>
+            <td>the filesize in bytes</td>
+            <td align="center">8263217</td>
+        </tr>
+        </tbody>
+    </table>
+    <h5 id="markdown-header-audios">Audios</h5>
+    <table class="striped">
+        <thead>
+        <tr>
+            <th align="left">Name</th>
+            <th>Description</th>
+            <th align="center">Example value</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td align="left">uuid</td>
+            <td>Unique id</td>
+            <td align="center">e5e0cdc5-4b36-5460-b74f-f80ea7287d28</td>
+        </tr>
+        <tr>
+            <td align="left">mimetype</td>
+            <td>the media MIME Type</td>
+            <td align="center">audio/mpeg</td>
+        </tr>
+        <tr>
+            <td align="left">url</td>
+            <td>link to the media item</td>
+            <td align="center">http://av.voanews.com/Videoroot/Pangeavideo/2014/12/e91557c30f91_a.mp3</td>
+        </tr>
+        <tr>
+            <td align="left">quality</td>
+            <td>the audio quality (allowed values: small, medium, large)</td>
+            <td align="center">medium</td>
+        </tr>
+        <tr>
+            <td align="left">bitrate</td>
+            <td>the bitrate</td>
+            <td align="center">64014</td>
+        </tr>
+        <tr>
+            <td align="left">duration</td>
+            <td>the duration in seconds</td>
+            <td align="center">3600</td>
+        </tr>
+        <tr>
+            <td align="left">filesize</td>
+            <td>the filesize in bytes</td>
+            <td align="center">8263217</td>
+        </tr>
+        </tbody>
+    </table>
+    <h5 id="markdown-header-images">Images</h5>
+    <table class="striped">
+        <thead>
+        <tr>
+            <th align="left">Name</th>
+            <th>Description</th>
+            <th align="center">Example value</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td align="left">uuid</td>
+            <td>Unique id</td>
+            <td align="center">2778a778-e0a4-55b6-b0e8-fdfb73786f9e</td>
+        </tr>
+        <tr>
+            <td align="left">mimetype</td>
+            <td>the media MIME Type</td>
+            <td align="center">image/jpeg</td>
+        </tr>
+        <tr>
+            <td align="left">url</td>
+            <td>link to the media item</td>
+            <td align="center">http://gdb.voanews.com/c48ba368-3182-425f-bf66-e91557c30f91_tv_w800_h450.jpg</td>
+        </tr>
+        <tr>
+            <td align="left">filesize</td>
+            <td>the filesize in bytes</td>
+            <td align="center">1200000</td>
+        </tr>
+        <tr>
+            <td align="left">width</td>
+            <td>image width (pixels)</td>
+            <td align="center">600</td>
+        </tr>
+        <tr>
+            <td align="left">height</td>
+            <td>image height (pixels)</td>
+            <td align="center">800</td>
+        </tr>
+        <tr>
+            <td align="left">caption</td>
+            <td>image caption</td>
+            <td align="center">&amp;lt;p&amp;gt;This is an image caption with descriptive text&amp;lt;/p&amp;gt;</td>
+        </tr>
+        <tr>
+            <td align="left">credit</td>
+            <td>image credit (rights)</td>
+            <td align="center">Steve McCurry</td>
+        </tr>
+        <tr>
+            <td align="left">source</td>
+            <td>image source (rights)</td>
+            <td align="center">National Geographic</td>
+        </tr>
+        </tbody>
+    </table>
+    <h5 class="markdown-header-api">/api/search</h5>
+    <p>Search contents</p>
+    <h5 id="markdown-header-parameters_1">Parameters</h5>
+    <table class="striped">
+        <thead>
+        <tr>
+            <th align="left">Param</th>
+            <th>Description</th>
+            <th align="center">type</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td align="left">details</td>
+            <td>Show all fields including embedded</td>
+            <td align="center">bool</td>
+        </tr>
+        <tr>
+            <td align="left">page</td>
+            <td>Page number</td>
+            <td align="center">integer</td>
+        </tr>
+        <tr>
+            <td align="left">limit</td>
+            <td>Number of results to return</td>
+            <td align="center">integer</td>
+        </tr>
+        <tr>
+            <td align="left">until</td>
+            <td>Filter by publish date before given date</td>
+            <td align="center">date (YYYY-MM-DD)</td>
+        </tr>
+        <tr>
+            <td align="left">since</td>
+            <td>Filter by publish date since given date</td>
+            <td align="center">date (YYYY-MM-DD)</td>
+        </tr>
+        <tr>
+            <td align="left">q</td>
+            <td>Search for a string</td>
+            <td align="center">string</td>
+        </tr>
+        <tr>
+            <td align="left">type</td>
+            <td>Filter by resource types (article, audio, image, photo_gallery, transcript, video)</td>
+            <td align="center">string</td>
+        </tr>
+        <tr>
+            <td align="left">countries</td>
+            <td>Filter by country, given a comma-seperated list of two character country codes</td>
+            <td align="center">string</td>
+        </tr>
+        <tr>
+            <td align="left">languages</td>
+            <td>Filter by language given a comma-seperated list of two character language codes</td>
+            <td align="center">string</td>
+        </tr>
+        <tr>
+            <td align="left">network</td>
+            <td>Filter by Network, given a lowercase network name</td>
+            <td align="center">string</td>
+        </tr>
+        <tr>
+            <td align="left">organization</td>
+            <td>Filter by Organization, given a lowercase org name</td>
+            <td align="center">string</td>
+        </tr>
+        </tbody>
+    </table>
+    <h5 class="markdown-header-api">/api/networks</h5>
+    <p>Networks</p>
+    <h5 id="markdown-header-parameters_2">Parameters</h5>
+    <table class="striped">
+        <thead>
+        <tr>
+            <th align="left">Param</th>
+            <th>Description</th>
+            <th align="center">type</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td align="left">details</td>
+            <td>Show all fields</td>
+            <td align="center">bool</td>
+        </tr>
+        <tr>
+            <td align="left">page</td>
+            <td>Page number</td>
+            <td align="center">integer</td>
+        </tr>
+        <tr>
+            <td align="left">limit</td>
+            <td>Number of results to return</td>
+            <td align="center">integer</td>
+        </tr>
+        </tbody>
+    </table>
+    <h5 id="markdown-header-properties_1">Properties</h5>
+    <table class="striped">
+        <thead>
+        <tr>
+            <th align="left">Name</th>
+            <th>Description</th>
+            <th align="center">Example value</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td align="left">uuid</td>
+            <td>Unique id</td>
+            <td align="center">7d0f3a72-8c2e-598a-8e85-7d89abf734e5</td>
+        </tr>
+        <tr>
+            <td align="left">name</td>
+            <td>network name</td>
+            <td align="center">voa</td>
+        </tr>
+        <tr>
+            <td align="left">url</td>
+            <td>Web URL</td>
+            <td align="center">http://www.voanews.com</td>
+        </tr>
+        <tr>
+            <td align="left">description</td>
+            <td>network description</td>
+            <td align="center">Voice of America produces popular news, information and cultural programs in 45 languages.</td>
+        </tr>
+        <tr>
+            <td align="left">facebook_user</td>
+            <td>Facebook account name associate with a network</td>
+            <td align="center">voiceofamerica</td>
+        </tr>
+        <tr>
+            <td align="left">twitter_user</td>
+            <td>Twitter handle associated with a network</td>
+            <td align="center">VOA_News</td>
+        </tr>
+        </tbody>
+    </table>
+    <h5 class="markdown-header-api">/api/organizations</h5>
+    <p>Organizations</p>
+    <h5 id="markdown-header-parameters_3">Parameters</h5>
+    <table class="striped">
+        <thead>
+        <tr>
+            <th align="left">Param</th>
+            <th>Description</th>
+            <th align="center">type</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td align="left">details</td>
+            <td>Show all fields</td>
+            <td align="center">bool</td>
+        </tr>
+        <tr>
+            <td align="left">page</td>
+            <td>Page number</td>
+            <td align="center">integer</td>
+        </tr>
+        <tr>
+            <td align="left">limit</td>
+            <td>Number of results to return</td>
+            <td align="center">integer</td>
+        </tr>
+        </tbody>
+    </table>
+    <h5 id="markdown-header-properties_2">Properties</h5>
+    <table class="striped">
+        <thead>
+        <tr>
+            <th align="left">Name</th>
+            <th>Description</th>
+            <th align="center">Example value</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td align="left">uuid</td>
+            <td>Unique id</td>
+            <td align="center">b107fb60-a788-5418-8e5a-9a8a05dbf164</td>
+        </tr>
+        <tr>
+            <td align="left">name</td>
+            <td>Organization name</td>
+            <td align="center">BBG</td>
+        </tr>
+        <tr>
+            <td align="left">url</td>
+            <td>Web URL</td>
+            <td align="center">http://www.bbg.gov</td>
+        </tr>
+        <tr>
+            <td align="left">description</td>
+            <td>Organization description</td>
+            <td align="center">An independent federal agency that oversees all U.S. civilian international media.</td>
+        </tr>
+        </tbody>
+    </table>
+    <h5 class="markdown-header-api">/api/langauges</h5>
+    <p>Languages used in this API</p>
+    <h5 id="markdown-header-parameters_4">Parameters</h5>
+    <table class="striped">
+        <thead>
+        <tr>
+            <th align="left">Param</th>
+            <th>Description</th>
+            <th align="center">type</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td align="left">page</td>
+            <td>Page number</td>
+            <td align="center">integer</td>
+        </tr>
+        <tr>
+            <td align="left">limit</td>
+            <td>Number of results to return</td>
+            <td align="center">integer</td>
+        </tr>
+        </tbody>
+    </table>
+    <h5 id="markdown-header-properties_3">Properties</h5>
+    <table class="striped">
+        <thead>
+        <tr>
+            <th align="left">Name</th>
+            <th>Description</th>
+            <th align="center">Example value</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td align="left">uuid</td>
+            <td>Unique id</td>
+            <td align="center">4795c937-58f2-5cdf-bab0-e7f1790bf5fa</td>
+        </tr>
+        <tr>
+            <td align="left">name</td>
+            <td>Language name</td>
+            <td align="center">English</td>
+        </tr>
+        <tr>
+            <td align="left">lang_code</td>
+            <td>ISO 639-1 language code</td>
+            <td align="center">en</td>
+        </tr>
+        </tbody>
+    </table>
+    <h5 class="markdown-header-api">/api/countries</h5>
+    <p>Countries used in this API</p>
+    <h5 id="markdown-header-parameters_5">Parameters</h5>
+    <table class="striped">
+        <thead>
+        <tr>
+            <th align="left">Param</th>
+            <th>Description</th>
+            <th align="center">type</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td align="left">page</td>
+            <td>Page number</td>
+            <td align="center">integer</td>
+        </tr>
+        <tr>
+            <td align="left">limit</td>
+            <td>Number of results to return</td>
+            <td align="center">integer</td>
+        </tr>
+        </tbody>
+    </table>
+    <h5 id="markdown-header-properties_4">Properties</h5>
+    <table class="striped">
+        <thead>
+        <tr>
+            <th align="left">Name</th>
+            <th>Description</th>
+            <th align="center">Example value</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td align="left">uuid</td>
+            <td>Unique id</td>
+            <td align="center">ac1401f5-baf6-5f68-95d6-0348a0dd7f9f</td>
+        </tr>
+        <tr>
+            <td align="left">name</td>
+            <td>Country name</td>
+            <td align="center">United States</td>
+        </tr>
+        <tr>
+            <td align="left">code</td>
+            <td>ISO 3166 Alpha-2 code</td>
+            <td align="center">US</td>
+        </tr>
+        </tbody>
+    </table>
+    <br>
+</section>

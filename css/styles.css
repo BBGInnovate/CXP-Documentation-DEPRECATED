@@ -1,11 +1,10 @@
-body {
-    overflow: hidden;
-}
-
 .container {
     max-width: 730px;
     margin-top: 50px;
-    margin-left: 240px;
+}
+
+.home-section {
+    margin-left: 100px;
 }
 
 .row {
@@ -43,7 +42,7 @@ textarea {
     margin-bottom: 2em;
     overflow: auto;
     margin-top: 20px;
-    height: 350px;
+    height: 420px;
 }
 
 
@@ -56,7 +55,7 @@ textarea {
 }
 
 #nav-mobile {
-    height: 600px;
+    height: 700px;
     margin-top: 64px;
     overflow: auto;
     position: absolute !important;
@@ -163,7 +162,7 @@ ul.side-nav.full li, ul.side-nav.fixed li {
 }
 
 .submit-api-call {
-    margin-left: 40px;
+    margin-left: 15px;
     margin-top: 16px;
     width: 130px;
 }
@@ -222,4 +221,9 @@ ul.side-nav.full a, ul.side-nav.fixed a {
 
 #api-key {
     font-size: 12px;
+}
+
+.markdown-header-api {
+    font-weight: bold;
+    margin-top: 50px;
 }

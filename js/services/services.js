@@ -7,7 +7,7 @@ angular.module('JsonFormatter').factory('APIData', ['$http', '$q', function($htt
 	return {
 		getEndpoint: function(filter) {
 
-			return $http.get('http://cxp.bbg.gov/bbg/'+filter+'?api_key=' + API_KEY, {timeout: 5000}).then(function(response) {
+			return $http.get('https://cxp.bbg.gov/api/'+filter+'?api_key=' + API_KEY, {timeout: 5000}).then(function(response) {
 				return response.data;
 			}, function(err) {
 				alert(filter + ' failed to load');
@@ -17,10 +17,10 @@ angular.module('JsonFormatter').factory('APIData', ['$http', '$q', function($htt
 		getAllData: function () {
 			return $q.all([
 				// $q will keep the list of promises in a array
-				$http.get('http://cxp.bbg.gov/bbg/countries?api_key=' + API_KEY + '&story=1'),
-				$http.get('http://cxp.bbg.gov/bbg/languages?api_key=' + API_KEY),
-				$http.get('http://cxp.bbg.gov/bbg/networks?api_key=' + API_KEY),
-				$http.get('http://cxp.bbg.gov/bbg/organizations?api_key=' + API_KEY)
+				$http.get('https://cxp.bbg.gov/api/countries?api_key=' + API_KEY + '&story=1'),
+				$http.get('https://cxp.bbg.gov/api/languages?api_key=' + API_KEY),
+				$http.get('https://cxp.bbg.gov/api/networks?api_key=' + API_KEY),
+				$http.get('https://cxp.bbg.gov/api/organizations?api_key=' + API_KEY)
 			]).then(function (results) {
 				// once all the promises are completed .then() will be executed
 				// and results will have the object that contains the data
@@ -80,7 +80,7 @@ angular.module('JsonFormatter').factory('APIData', ['$http', '$q', function($htt
 			return $q.all([
 				// $q will keep the list of promises in a array
 		//		$http.get('http://cxp.bbg.gov/bbg/search?api_key='+API_KEY + queryString)
-				$http.get('http://cxp.bbg.gov/bbg/'+controller+'/?api_key='+ apiKey + queryString, {handleError:true})
+				$http.get('http://cxp.bbg.gov/api/'+controller+'/?api_key='+ apiKey + queryString, {handleError:true})
 
 			]).then(function (results) {
 				return results;
