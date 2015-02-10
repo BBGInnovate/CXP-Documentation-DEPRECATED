@@ -8,6 +8,10 @@ body {
     margin-left: 240px;
 }
 
+.row {
+    margin-bottom: 0px !important;
+}
+
 .container-heading {
     margin-top: -30px;
 }
@@ -159,9 +163,9 @@ ul.side-nav.full li, ul.side-nav.fixed li {
 }
 
 .submit-api-call {
-    width: 130px;
     margin-left: 40px;
-    margin-top: 15px;
+    margin-top: 16px;
+    width: 130px;
 }
 
 #add-field {
@@ -205,4 +209,17 @@ ul.side-nav.full a, ul.side-nav.fixed a {
     color: #444;
     display: block;
     padding: 0 2px;
+}
+
+.alert-api-key {
+    color: #ee343f !important;
+}
+
+.alert-api-key-input {
+    border-bottom: 1px solid #ee343f !important;
+    box-shadow: 0 1px 0 0 #ee343f !important;
+}
+
+#api-key {
+    font-size: 12px;
 }

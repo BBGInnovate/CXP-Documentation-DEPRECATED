@@ -1,4 +1,5 @@
-angular.module('JsonFormatter').controller('MainCtrl', ['$scope', 'APIData', '$filter', function ($scope, APIData, $filter) {
+angular.module('JsonFormatter').controller('MainCtrl', ['$scope', 'APIData', '$rootScope',
+	function ($scope, APIData, $rootScope) {
 
 	$scope.initialFilters = [
 		{"name": "countries"},
@@ -14,30 +15,13 @@ angular.module('JsonFormatter').controller('MainCtrl', ['$scope', 'APIData', '$f
 	$scope.searchQueryString = '/';
 	$scope.customQueryFields = [];
 
+	// create scope placeholders for the filters
 	for (var i = 0; i < $scope.initialFilters.length; i++) {
 		$scope[$scope.initialFilters[i].name] = [];
 	}
-	/*
-	$scope.states = [];
-
-	for (var i = 0; i < $scope.initialFilters.length; i++) {
-		var filter = $scope.initialFilters[i].name;
-		APIData.get(filter)
-			.then(function(response) {
-				//setTimeout(function(){ $scope.textareaJson = response; $scope.isLoading = false; $scope.$apply() }, 1000 );
-				$scope[filter] = response;
 
 
-				for (var j = 0; j < $scope[filter].length; j++) {
-					$scope[filter][j].name += ' ~ ' + filter;
-				}
-
-				$scope.states = $scope.states.concat($scope[filter]);
-
-			});
-	}
-	*/
-
+	// get all data on page load
 	APIData.getAllData().then(function(response) {
 		$scope.initialFilterData = response;
 	});
@@ -63,12 +47,11 @@ angular.module('JsonFormatter').controller('MainCtrl', ['$scope', 'APIData', '$f
 
 
 	$scope.uncheckField = function (index) {
-		console.log(index);
 
 		// If countries, organizations, networks, languages
 		if ($scope[index.filter]) {
 			for (var i = 0; i < $scope[index.filter].length; i++) {
-				console.log($scope[index.filter][i].name + ' ' + index.name);
+
 				if ($scope[index.filter][i].name === index.name) {
 					$scope[index.filter].splice(i, 1);
 
@@ -81,7 +64,7 @@ angular.module('JsonFormatter').controller('MainCtrl', ['$scope', 'APIData', '$f
 					$scope.customQueryFields.splice(k, 1);
 				}
 			}
-			console.log($scope.customQueryFields);
+
 		}
 
 		for (var j = 0; j < $scope.fields.length; j++) {
@@ -89,73 +72,73 @@ angular.module('JsonFormatter').controller('MainCtrl', ['$scope', 'APIData', '$f
 				$scope.fields.splice(j, 1);
 			}
 		}
-		//console.log($scope.fields);
-		/*
-		setTimeout(function(){
 
-			$scope.fields.splice(index, 1);
-			$scope.$apply();
-
-		}, 200 );
-		*/
 	};
 
+	// the submit button is clicked, process data
 	$scope.submit = function () {
 		$scope.isLoading = true;
+		$rootScope.badApiKey = false;
 		var queryString = $('.query-string-holder').text().trim();
-		console.log($scope.searchQueryString + $scope.filters);
-		queryString = queryString.substring(10, queryString.length).replace(/(\r\n|\n|\r)/gm,"").replace(/\s+/g, '');
-	//	console.log(queryString);
+		var apiKey = $scope.apiKey;
+		var controller = $scope.searchQueryString;
 
-		APIData.getDataByQueryString(queryString).then(function(response) {
+		queryString = queryString.substring(10, queryString.length).replace(/(\r\n|\n|\r)/gm,"").replace(/\s+/g, '');
+
+		APIData.getDataByQueryString(controller, queryString, apiKey).then(function(response) {
 			setTimeout(function(){ $scope.textareaJson = response; $scope.isLoading = false; $scope.$apply() }, 1000 );
 		});
 
 	};
 
+
+
 	$scope.$watch('selected', function(newValue, oldValue) {
 		if (newValue) {
-
+			console.log(newValue);
+			/*
 			var filter = $filter('getFilterName')(newValue.split('<')[2]);
 			var queryStringCode = $filter('getQueryStringCode')(newValue.split('<')[4]);
+			*/
+			var filter = newValue.filter;
+			var queryStringCode = newValue.code;
 
-			newValue = newValue.split('<')[0];
+			//newValue = newValue.split('<')[0];
 
-			$scope[filter].push({"name": newValue, queryStringCode: queryStringCode });
-			$scope.fields.push({"name": newValue, "filter": filter, queryStringCode: queryStringCode });
-			$scope.filters += newValue;
+			$scope[filter].push({"name": newValue.name, queryStringCode: queryStringCode });
+			$scope.fields.push({"name": newValue.name, "filter": filter, queryStringCode: queryStringCode });
+			$scope.filters += newValue.name;
 			$scope.selected = '';
-			console.log($scope[filter]);
+
 		}
 	});
 
 
+	// this function sets the filter from the left panel
 	$scope.selectFilter = function (filter) {
+
 		$scope.resetFilters();
+
 		$scope.searchFields = false;
-		$scope.isLoading = true;
 		$scope.searchQueryString = '/' + filter + '/';
 
+		// show the search fields if the search filter is selected
 		if (filter === 'search') {
 		//	$scope.searchQueryString += '?q=';
 			$scope.searchFields = true;
 		}
 
-		APIData.getEndpoint(filter)
-			.then(function(response) {
-				setTimeout(function(){ $scope.textareaJson = response; $scope.isLoading = false; $scope.$apply() }, 1000 );
-			});
 	};
 
 	$scope.addField = function () {
 		var field = $('#typeahead-filters').val();
-		console.log(field.length);
+
 		$scope.fields.push({ "name": field, "filter": 'custom' });
 		$scope.customQueryFields.push(field);
 		$scope.selected = '';
 	};
 
-
+	// this function sets the JSON array in the box whwen it's found
   	$scope.$watch('textarea', function (str){
     	var result = {};
 
@@ -166,6 +149,7 @@ angular.module('JsonFormatter').controller('MainCtrl', ['$scope', 'APIData', '$f
   	});
 
 
+	// Reset all of the filters
 	$scope.resetFilters = function () {
 	//	$scope.pageFilter = '';
 	//	$scope.limitFilter = '';

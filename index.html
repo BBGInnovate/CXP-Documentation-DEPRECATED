@@ -32,18 +32,32 @@
 
 
         <loading-animation></loading-animation>
+<!--
+        <div class="row">
+            <span class="alert badge" ng-show="badApiKey">Invalid API Key</span>
+            <div class="input-field col s12">
+                <input type="text" ng-model="apiKey" id="api-key">
+                <label for="api-key">API Key</label>
+            </div>
+        </div>
+-->
 
         <div class="row">
-            <div class="input-field col s4">
+            <div class="input-field col s6">
+                <input type="text" ng-model="apiKey" id="api-key" ng-class="badApiKey ? 'alert-api-key-input' : ''">
+                <label for="api-key" ng-hide="badApiKey">API Key</label>
+                <label for="api-key" ng-show="badApiKey" class="alert-api-key">Invalid API Key</label>
+            </div>
+            <div class="input-field col s2">
                 <input type="text" number-mask="" min="0" max="99" ng-model="pageFilter" id="page-filter">
                 <label for="page-filter">Page</label>
             </div>
-            <div class="input-field col s4">
+            <div class="input-field col s2">
                 <input type="text" number-mask="" min="0" max="99" ng-model="limitFilter" id="limit-filter">
                 <label for="limit-filter">Limit</label>
             </div>
 
-            <div class="input-field col s4">
+            <div class="input-field col s2">
                 <input type="checkbox" ng-model="detailsFilter" ng-true-value="1" ng-false-value="0" id="detailsFilter" />
                 <label for="detailsFilter">Details</label>
             </div>
@@ -94,7 +108,7 @@
         </li>
 
         <li ng-show="searchFields" style="background: none repeat scroll 0 0 white; height: 400px; overflow: auto; font-size: 12px">
-            <input type="text" id="typeahead-filters" ng-model="selected" placeholder="Type a field" typeahead-min-length="2" typeahead="filter.htmlName for filter in initialFilterData | filter:$viewValue | limitTo:7" typeahead-editable="false">
+            <input type="text" id="typeahead-filters" ng-model="selected" placeholder="Type a field" typeahead-min-length="2" typeahead="filter for filter in initialFilterData | filter:$viewValue | limitTo:7" typeahead-editable="false">
             <a id="add-field" ng-click="addField()" class="waves-effect waves-light btn">+ Add Field</a>
         </li>
 
