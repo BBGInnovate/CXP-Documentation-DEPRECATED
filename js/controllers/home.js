@@ -1,6 +1,11 @@
 angular.module('JsonFormatter').controller('MainCtrl', ['$scope', 'APIData', '$rootScope',
 	function ($scope, APIData, $rootScope) {
 
+	// load jQuery functions
+	$scope.$on('$viewContentLoaded', jQueryFunctions);
+
+
+
 	$scope.initialFilters = [
 		{"name": "countries"},
 		{"name": "languages"},
