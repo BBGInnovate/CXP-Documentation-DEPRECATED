@@ -47,6 +47,7 @@ angular.module('JsonFormatter').factory('APIData', ['$http', '$q', function($htt
 						}
 
 						result.data[i].filter = filter;
+						result.data[i].code = result.data[i][code];
 						//result.data[i].htmlName = result.data[i].name + '<span class="badge filter-badge"><span>'+list[listCount]+'</span><span style="display: none">'+result.data[i][code]+'</span></span>';
 					}
 					aggregatedData = aggregatedData.concat(result.data);
