@@ -1,4 +1,4 @@
-angular.module('JsonFormatter').controller('MainCtrl', ['$scope', 'APIData', '$rootScope',
+angular.module('JsonFormatter').controller('ApiCtrl', ['$scope', 'APIData', '$rootScope',
 	function ($scope, APIData, $rootScope) {
 
 	// load jQuery functions
@@ -15,7 +15,6 @@ angular.module('JsonFormatter').controller('MainCtrl', ['$scope', 'APIData', '$r
 		{"name": "contents"},
 		{"name": "search"}
 	];
-
 
 	$scope.searchQueryString = '/';
 	$scope.customQueryFields = [];

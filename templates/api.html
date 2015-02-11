@@ -49,8 +49,10 @@
 
     </div>
 
-    <ul class="side-nav fixed" id="nav-mobile">
-
+    <ul class="side-nav fixed" id="nav-mobile" style="height: 700px; overflow: scroll">
+        <li class="logo">
+            <img class="oddi-logo" height="45" src="img/oddi-logo.png" />
+        </li>
         <span class="side-nav-list-heading">Endpoints</span>
         <li ng-repeat="filter in initialFilters" class="bold">
             <a ng-click="selectFilter( filter.name )" href=""><span class="new badge" style="margin-top: 10px"></span> /{{ filter.name }}</a>
@@ -70,7 +72,6 @@
             <a id="add-field" ng-click="addField()" class="waves-effect waves-light btn">+ Add Field</a>
         </li>
 
-
-
     </ul>
+
 </section>

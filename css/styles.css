@@ -15,6 +15,10 @@
     margin-top: -30px;
 }
 
+.brand-logo {
+    margin-left: 250px !important;
+}
+
 h1, h2, h3 {
     font-family: sans-serif;
 }
@@ -55,10 +59,12 @@ textarea {
 }
 
 #nav-mobile {
+    /*
     height: 700px;
     margin-top: 64px;
     overflow: auto;
     position: absolute !important;
+    */
 }
 
 span.badge.new:after {
@@ -226,4 +232,16 @@ ul.side-nav.full a, ul.side-nav.fixed a {
 .markdown-header-api {
     font-weight: bold;
     margin-top: 50px;
+}
+
+ul.side-nav.fixed li.logo {
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 16px;
+    margin-top: 2px;
+    text-align: center;
+}
+
+.oddi-logo {
+    position: relative;
+    top: 7px;
 }
