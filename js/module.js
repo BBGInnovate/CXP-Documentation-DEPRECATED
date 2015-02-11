@@ -1,4 +1,4 @@
-angular.module('JsonFormatter', ['ngSanitize', 'jsonFormatter', 'ui.bootstrap', 'ngRoute']);
+angular.module('JsonFormatter', ['ngSanitize', 'jsonFormatter', 'ui.bootstrap', 'ngRoute', 'ngLoadScript']);
 
 // route state
 angular.module('JsonFormatter').config(['$routeProvider', function($routeProvider) {
