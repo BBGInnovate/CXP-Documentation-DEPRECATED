@@ -4,7 +4,7 @@ angular.module('JsonFormatter', ['ngSanitize', 'jsonFormatter', 'ui.bootstrap', 
 angular.module('JsonFormatter').config(['$routeProvider', function($routeProvider) {
 
 	$routeProvider.
-		when('/', {
+		when('/api', {
 			templateUrl: 'templates/home.html',
 			controller: 'MainCtrl'
 		}).
@@ -17,7 +17,7 @@ angular.module('JsonFormatter').config(['$routeProvider', function($routeProvide
 			controller: 'SignUpCtrl'
 		}).
 		otherwise({
-			redirectTo: '/'
+			redirectTo: '/docs'
 		});
 }]);
 
