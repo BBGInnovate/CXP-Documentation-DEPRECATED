@@ -5,7 +5,7 @@ angular.module('JsonFormatter').config(['$routeProvider', function($routeProvide
 
 	$routeProvider.
 		when('/api', {
-			templateUrl: 'templates/home.html',
+			templateUrl: 'templates/api.html',
 			controller: 'MainCtrl'
 		}).
 		when('/docs', {
