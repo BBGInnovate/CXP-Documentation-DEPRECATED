@@ -16,6 +16,8 @@
 
     <link rel="stylesheet" href="css/json-formatter.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
 </head>
 <body ng-app="JsonFormatter">
 
@@ -26,11 +28,22 @@
             <a href="#!" class="brand-logo">Content eXchange Platform</a>
         </div>
 
+        <ul id="nav-mobile-header-social" class="right side-nav">
+            <li><a href="https://github.com/BBGInnovate"><i class="fa fa-git"></i></a></li>
+            <li><a href="https://twitter.com/bbginnovate"><i class="fa fa-twitter"></i></a></li>
+
+        </ul>
+
         <ul id="nav-mobile-header" class="right side-nav">
             <li><a href="#/api">API Explorer</a></li>
             <li><a href="#/docs">Docs</a></li>
             <li><a href="#/signup">Sign Up</a></li>
+
         </ul>
+
+
+
+
     </div>
 </nav>
 
@@ -88,6 +101,8 @@
             $('#add-field').on('click', function() {
                 $('#add-field').hide();
             });
+
+
         }
 
 

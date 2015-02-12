@@ -40,10 +40,11 @@ angular.module('JsonFormatter').factory('APIData', ['$http', '$q', function($htt
 							filter = 'languages';
 						} else if (list[listCount] === 'networks') {
 							code = 'object_name';
-							filter = 'networks';
+							filter = 'organizations';
 						} else if (list[listCount] === 'organizations') {
 							code = 'object_name';
-							filter = 'organizations'
+							filter = 'networks';
+
 						}
 
 						result.data[i].filter = filter;
@@ -52,6 +53,7 @@ angular.module('JsonFormatter').factory('APIData', ['$http', '$q', function($htt
 					}
 					aggregatedData = aggregatedData.concat(result.data);
 					listCount++;
+
 				});
 				return aggregatedData;
 			});

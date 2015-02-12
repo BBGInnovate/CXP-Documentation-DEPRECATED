@@ -2,7 +2,6 @@
     <div class="home-section">
         <h4 class="container-heading">JSON Output</h4>
 
-
         <loading-animation></loading-animation>
 
         <div class="row">
@@ -26,17 +25,22 @@
             </div>
         </div>
 
+        <p ng-if="countries.length > 0" blahdir></p>
         <div class="query-string-div">
             <p class="query-string-holder">
                 <span>{{ searchQueryString }}</span>
-                <span class="query-string">?q={{ customQueryFields | toStringArray }}</span>
-                <span class="query-string" ng-show="countries.length > 0">&country={{ countries | toStringArray }}</span>
-                <span class="query-string" ng-show="languages.length > 0">&language={{ languages | toStringArray }}</span>
-                <span class="query-string" ng-show="networks.length > 0">&network={{ networks | toStringArray }}</span>
-                <span class="query-string" ng-show="organizations.length > 0">&organization={{ organizations | toStringArray }}</span>
-                <span class="query-string" ng-show="pageFilter.length > 0">&page={{ pageFilter }}</span>
-                <span class="query-string" ng-show="limitFilter.length > 0">&limit={{ limitFilter }}</span>
-                <span class="query-string" ng-show="detailsFilter == 1">&details={{ detailsFilter }}</span>
+                <!--
+                <span style="margin-left: -3px">{{ queryStringNew }}</span>
+                -->
+                <span class="query-string" ng-if="customQueryFields.length > 0">?q={{ customQueryFields | toStringArray }}</span>
+                <span class="query-string" ng-if="countries.length > 0">&country={{ countries | toStringArray }}</span>
+                <span class="query-string" ng-if="languages.length > 0">&language={{ languages | toStringArray }}</span>
+                <span class="query-string" ng-if="networks.length > 0">&network={{ networks | toStringArray }}</span>
+                <span class="query-string" ng-if="organizations.length > 0">&organization={{ organizations | toStringArray }}</span>
+                <span class="query-string" ng-if="pageFilter.length > 0">&page={{ pageFilter }}</span>
+                <span class="query-string" ng-if="limitFilter.length > 0">&limit={{ limitFilter }}</span>
+                <span class="query-string" ng-if="detailsFilter == 1">&details={{ detailsFilter }}</span>
+
             </p>
             <a class="waves-effect waves-light btn submit-api-call" ng-click="submit()">Submit</a>
         </div>
@@ -51,7 +55,9 @@
 
     <ul class="side-nav fixed" id="nav-mobile" style="height: 700px; overflow: scroll">
         <li class="logo">
-            <img class="oddi-logo" height="45" src="img/oddi-logo.png" />
+            <a href="http://oddi.bbg.gov">
+                <img class="oddi-logo" height="45" src="img/oddi-logo.png" />
+            </a>
         </li>
         <span class="side-nav-list-heading">Endpoints</span>
         <li ng-repeat="filter in initialFilters" class="bold">

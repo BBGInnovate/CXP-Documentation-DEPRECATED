@@ -18,3 +18,36 @@ angular.module('JsonFormatter').directive('loadingAnimation', function() {
 	return directive;
 });
 
+/*
+angular.module('JsonFormatter').directive('blahdir', function() {
+
+	return {
+		restrict: 'A',
+		link: function(scope, element, attrs) {
+
+			console.log(scope.countries);
+			scope.$watch(scope.countries, function() {
+				console.log('test');
+			});
+
+
+
+		//	va
+		//	$('.query-string').text(queryStringText);
+		}
+	}
+
+});
+*/
+/*
+// Directive for handling titles (whether it scrolls or static text)
+angular.module('JsonFormatter').directive('blahdirective', function() {
+	return {
+		restrict: 'AE',
+		replace: 'true',
+		template: '<h3>Hello World!!</h3>'
+	};
+});
+
+*/
+

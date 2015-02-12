@@ -245,3 +245,17 @@ ul.side-nav.fixed li.logo {
     position: relative;
     top: 7px;
 }
+
+.fa-git {
+    font-size: 14px !important;
+    color: #dddddd;
+}
+
+.fa-twitter {
+    font-size: 14px !important;
+    color: #55ACEE;
+}
+
+#nav-mobile-header-social {
+    margin-left: 30px !important;
+}
