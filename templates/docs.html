@@ -1,6 +1,7 @@
 <section>
     <div class="home-section">
         <h4 class="container-heading">Docs - API Reference</h4>
+        <p>The CXP Application Programming Interface (API) follows, RESTful, Hypermedia API standards to facilitate the distribution of digital content (audio, video, images and text) from multiple USG Foreign Affairs agencies to audiences worldwide.</p>
 
         <h5 class="markdown-header-api" id="api-contents">/api/contents</h5>
         <p>Content - the main endpoint displays CXP content items</p>
@@ -73,24 +74,24 @@
             </tr>
             <tr>
                 <td align="left">network</td>
-                <td>A <a href="#apiv1networks">network</a></td>
+                <td>A <a ng-click="scrollTo('networks')" href="">network</a></td>
                 <td align="center">{}</td>
             </tr>
             <tr>
                 <td align="left">organization</td>
-                <td>An <a href="#apiv1organizations">organization</a></td>
+                <td>An <a ng-click="scrollTo('organizations')" href="">organization</a></td>
                 <td align="center">{}</td>
             </tr>
             <tr>
                 <td align="left">language</td>
-                <td>A <a href="#apiv1languages">language</a></td>
+                <td>A <a ng-click="scrollTo('languages')" href="">language</a></td>
                 <td align="center">{}</td>
             </tr>
             </tbody>
         </table>
         <h5 id="markdown-header-_embedded">_embedded</h5>
         <p>Additionally, content item's may have the following embedded objects:
-            <a href="#articles">Articles</a>, <a href="#videos">Videos</a>, <a href="#audios">Audios</a>, <a href="#images">Images</a>, and Photo Galleries</p>
+            <a ng-click="scrollTo('articles')" href="">Articles</a>, <a ng-click="scrollTo('videos')" href="">Videos</a>, <a ng-click="scrollTo('audios')" href="">Audios</a>, <a ng-click="scrollTo('images')" href="">Images</a>, and Photo Galleries</p>
         <h5 id="markdown-header-articles">Articles</h5>
         <table class="striped">
             <thead>
@@ -411,16 +412,6 @@
                 <td align="left">description</td>
                 <td>network description</td>
                 <td align="center">Voice of America produces popular news, information and cultural programs in 45 languages.</td>
-            </tr>
-            <tr>
-                <td align="left">facebook_user</td>
-                <td>Facebook account name associate with a network</td>
-                <td align="center">voiceofamerica</td>
-            </tr>
-            <tr>
-                <td align="left">twitter_user</td>
-                <td>Twitter handle associated with a network</td>
-                <td align="center">VOA_News</td>
             </tr>
             </tbody>
         </table>
