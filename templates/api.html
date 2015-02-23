@@ -8,7 +8,7 @@
             <div class="input-field col s6">
                 <input type="text" ng-model="apiKey" id="api-key" ng-class="badApiKey ? 'alert-api-key-input' : ''">
                 <label for="api-key" ng-hide="badApiKey">API Key</label>
-                <label for="api-key" ng-show="badApiKey" class="alert-api-key">Invalid API Key</label>
+                <label for="api-key" ng-show="badApiKey" class="alert-api-key">Please enter a valid API Key</label>
             </div>
             <div class="input-field col s2">
                 <input type="text" number-mask="" min="0" max="99" ng-model="pageFilter" id="page-filter">

@@ -17,10 +17,10 @@ angular.module('JsonFormatter').factory('APIData', ['$http', '$q', function($htt
 		getAllData: function () {
 			return $q.all([
 				// $q will keep the list of promises in a array
-				$http.get('https://cxp.bbg.gov/api/countries?api_key=' + API_KEY + '&story=1'),
-				$http.get('https://cxp.bbg.gov/api/languages?api_key=' + API_KEY),
-				$http.get('https://cxp.bbg.gov/api/networks?api_key=' + API_KEY),
-				$http.get('https://cxp.bbg.gov/api/organizations?api_key=' + API_KEY)
+				$http.get('https://cxp.bbg.gov/api/countries?api_key=' + API_KEY + '&story=1',  {handleError:true}),
+				$http.get('https://cxp.bbg.gov/api/languages?api_key=' + API_KEY,  {handleError:true}),
+				$http.get('https://cxp.bbg.gov/api/networks?api_key=' + API_KEY,  {handleError:true}),
+				$http.get('https://cxp.bbg.gov/api/organizations?api_key=' + API_KEY,  {handleError:true})
 			]).then(function (results) {
 				// once all the promises are completed .then() will be executed
 				// and results will have the object that contains the data
@@ -28,31 +28,32 @@ angular.module('JsonFormatter').factory('APIData', ['$http', '$q', function($htt
 				var list = ['countries', 'languages', 'organizations', 'networks'];
 				var listCount = 0;
 				angular.forEach(results, function (result) {
+					if (result) {
+						for (var i = 0; i < result.data.length; i++) {
+							var code = '';
+							var filter = '';
+							if (list[listCount] === 'countries') {
+								code = 'code';
+								filter = 'countries';
+							} else if (list[listCount] === 'languages') {
+								code = 'lang_code';
+								filter = 'languages';
+							} else if (list[listCount] === 'networks') {
+								code = 'object_name';
+								filter = 'organizations';
+							} else if (list[listCount] === 'organizations') {
+								code = 'object_name';
+								filter = 'networks';
 
-					for (var i = 0; i < result.data.length; i++) {
-						var code = '';
-						var filter = '';
-						if (list[listCount] === 'countries') {
-							code = 'code';
-							filter = 'countries';
-						} else if (list[listCount] === 'languages') {
-							code = 'lang_code';
-							filter = 'languages';
-						} else if (list[listCount] === 'networks') {
-							code = 'object_name';
-							filter = 'organizations';
-						} else if (list[listCount] === 'organizations') {
-							code = 'object_name';
-							filter = 'networks';
+							}
 
+							result.data[i].filter = filter;
+							result.data[i].code = result.data[i][code];
+							//result.data[i].htmlName = result.data[i].name + '<span class="badge filter-badge"><span>'+list[listCount]+'</span><span style="display: none">'+result.data[i][code]+'</span></span>';
 						}
-
-						result.data[i].filter = filter;
-						result.data[i].code = result.data[i][code];
-						//result.data[i].htmlName = result.data[i].name + '<span class="badge filter-badge"><span>'+list[listCount]+'</span><span style="display: none">'+result.data[i][code]+'</span></span>';
+						aggregatedData = aggregatedData.concat(result.data);
+						listCount++;
 					}
-					aggregatedData = aggregatedData.concat(result.data);
-					listCount++;
 
 				});
 				return aggregatedData;
