@@ -1,4 +1,4 @@
-#cxp.bbg.gov Data & Content Policy
+#Content Policy
 
 The cxp.bbg.gov website is a portal for multimedia content from U.S. government foreign affairs agencies including the Broadcasting Board of Governors, Department of State and Department of Defense. It is a public domain website, which means you may link to cxp.bbg.gov at no cost. When you link to cxp.bbg.gov, please do it in an appropriate context as a service to people when they need to find official U.S. government foreign affairs agency data or multimedia content.
 
