@@ -1,14 +1,14 @@
 #cxp.bbg.gov Data & Content Policy
 
-The cxp.bbg.gov website is the official portal for open data and multimedia content from U.S. government foreign affairs agencies including the Broadcasting Board of Governors, Department of State and Department of Defense. It is a public domain website, which means you may link to cxp.bbg.gov at no cost. &nbsp;When you link to cxp.bbg.gov, please do it in an appropriate context as a service to people when they need to find official U.S. government foreign affairs agency data or multimedia content.
+The cxp.bbg.gov website is a portal for multimedia content from U.S. government foreign affairs agencies including the Broadcasting Board of Governors, Department of State and Department of Defense. It is a public domain website, which means you may link to cxp.bbg.gov at no cost. When you link to cxp.bbg.gov, please do it in an appropriate context as a service to people when they need to find official U.S. government foreign affairs agency data or multimedia content.
 
 ####Licensing
 
 U.S. Federal data and content available through cxp.bbg.gov is offered free and without restriction. Data and content created by government employees within the scope of their employment are not subject to domestic copyright protection under 17 U.S.C. § 105.
 
-Non-federal data and content available through cxp.bbg.gov may have a different licensing method. &nbsp;BBG and cxp.bbg.gov cannot authorize the use of copyrighted materials that may be available through accessing cxp.bbg.gov. Users must request such authorization from the provider of the content.
+Non-federal data and content available through oddi.bbg.gov/cxp/ and the cxp.bbg.gov API may have a different licensing method. BBG and cxp.bbg.gov cannot authorize the use of copyrighted materials that may be available through accessing oddi.bbg.gov/cxp/ or the cxp.bbg.gov API. Users must request such authorization from the provider of the content.
 
-All datasets and content accessed through cxp.bbg.gov are confined to public information and must not contain National Security information as defined by statute and/or Executive Order, or other information/data that is protected by other statute, practice, or legal precedent. The supplying Department/Agency is required to maintain currency with public disclosure requirements.
+All content accessed through oddi.bbg.gov/cxp or the cxp.bbg.gov API are confined to public information and must not contain National Security information as defined by statute and/or Executive Order, or other information/data that is protected by other statute, practice, or legal precedent. The supplying Department/Agency is required to maintain currency with public disclosure requirements.
 
 ####Digital Millennium Copyright Act Notice
 
@@ -28,25 +28,25 @@ BBG's Copyright Agent for notice of claims of copyright infringement can be reac
 
 While not required, when using content, data, documentation, code, and related materials from cxp.bbg.gov in your own work, we ask that proper credit be given. An example citation is provided below:
 
-Data retrieved from cxp.bbg.gov (https://www.cxp.bbg.gov/)
+Content retrieved from cxp.bbg.gov (https://www.cxp.bbg.gov/)
 
 ####Secondary Use
 
-Data and content accessed through cxp.bbg.gov do not, and should not, include controls over its end use. Once the data and content have been downloaded from the agency's site, the government cannot vouch for their quality and timeliness. Furthermor, the U.S. Government cannot vouch for any analyses conducted with data or content retrieved from cxp.bbg.gov.
+Content accessed through oddi.bbg.gov/cxp or the cxp.bbg.gov API does not, and should not, include controls over its end use. Once the content has been downloaded from the agency's site, the government cannot vouch for their quality and timeliness. Furthermor, the BBG and the U.S. Government cannot vouch for any analyses conducted with content retrieved from oddi.bbg.gov or the cxp.bbg.gov API.
 
 ####Disclaimer of Endorsement
 
-The information posted on the cxp.bbg.gov website includes hypertext links, or pointers, to information created and maintained by other public and/or private organizations. cxp.bbg.gov only provides these links and pointers for your information and convenience. When you select a link to an outside website, you are leaving the cxp.bbg.gov site and are subject to the privacy and security policies of the owners/sponsors of the outside website.
+The information available through the oddi.bbg.gov/cxp website or the cxp.bbg.gov API may include hypertext links to information created and maintained by other public and/or private organizations. The oddi.bbg.gov/cxp/ website and the cxp.bbg.gov API provide these links for your information. When you select a link to an outside website or content hosted by another agency, company or website, you are leaving the oddi.bbg.gov/cxp/ website and the cxp.bbg.gov API and are subject to the privacy and security policies of the owners/sponsors of the outside website or content.
 
-The Broadcasting Board of Governors (BBG) and cxp.bbg.gov do not control or guarantee the accuracy, relevance, timeliness, or completeness of information contained on a linked website.
+The Broadcasting Board of Governors (BBG) and the cxp.bbg.gov API do not control or guarantee the accuracy, relevance, timeliness, or completeness of information contained on a linked website.
 
-BBG and cxp.bbg.gov do not endorse the organizations sponsoring linked websites and we do not endorse the views they express or the products/services they offer.
+BBG and the cxp.bbg.gov API do not endorse organizations sponsoring linked websites and we do not endorse the views they express or the products/services they offer.
 
-BBG and cxp.bbg.gov cannot authorize the use of copyrighted materials contained in linked websites. Users must request such authorization from the sponsor of the linked website.
+BBG and the cxp.bbg.gov API cannot authorize the use of copyrighted materials contained in linked websites. Users must request such authorization from the sponsor of the linked website.
 
-BBG and cxp.bbg.gov are not responsible for transmissions users receive from linked websites.
+BBG and the cxp.bbg.gov API are not responsible for transmissions users receive from linked websites.
 
-BBG and cxp.bbg.gov do not guarantee that outside websites comply with Section 508 (accessibility requirements) of the Rehabilitation Act.
+BBG and the cxp.bbg.gov API do not guarantee that outside websites comply with Section 508 (accessibility requirements) of the Rehabilitation Act.
 
 ####Security
 
@@ -54,7 +54,7 @@ All information accessed through cxp.bbg.gov is in compliance with the required 
 
 ####Privacy
 
-All information accessed through cxp.bbg.gov must be in compliance with current privacy requirements including OMB guidance. Agencies are responsible for ensuring that the content accessed through cxp.bbg.gov have any required Privacy Impact Assessments or System of Records Notices (SORN) easily available on their websites.
+All information accessed through the oddi.bbg.gov/cxp/ website and the cxp.bbg.gov API must be in compliance with current privacy requirements including OMB guidance. Agencies are responsible for ensuring that the content accessed through the cxp.bbg.gov API have any required Privacy Impact Assessments or System of Records Notices (SORN) easily available on their websites.
 
 ####Applicability of this Policy
 
