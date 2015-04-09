@@ -2,7 +2,7 @@
 
 ####Privacy Statement
 
-We will collect no personal information about you when you visit our website unless you choose to provide that information to us.
+We will collect no personal information about you when you visit this website unless you choose to provide that information to us.
 
 ####Information Collected and Stored Automatically
 
@@ -20,7 +20,7 @@ The information we automatically collect and store about your visit includes but
 
 \* If you linked to this website from another website, the address of that other website.
 
-By creating an account and logging in you agree to let the BBG automatically track your website activities associated with your user name and the agency or company/ies you are associated with. The BBG uses this information to provide better services to you through the cxp.bbg.gov website and related services.
+By creating an account and logging in you agree to let the BBG automatically track your website activities associated with your user name and the agency or company/ies you are associated with. The BBG uses this information to provide better services to you through the oddi.bbg.gov/cxp/ website and related services, including the cxp.bbg.gov API.
 
 ####If You Send Us Personal Information
 
