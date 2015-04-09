@@ -1,14 +1,14 @@
 #Content Policy
 
-The cxp.bbg.gov website is a portal for multimedia content from U.S. government foreign affairs agencies including the Broadcasting Board of Governors, Department of State and Department of Defense. It is a public domain website, which means you may link to cxp.bbg.gov at no cost. When you link to cxp.bbg.gov, please do it in an appropriate context as a service to people when they need to find official U.S. government foreign affairs agency data or multimedia content.
+The oddi.bbg.gov/cxp/ website is a portal for multimedia content from U.S. government foreign affairs agencies including the Broadcasting Board of Governors, Department of State and Department of Defense. It is a public domain website, which means you may link to cxp.bbg.gov at no cost. When you link to cxp.bbg.gov, please do it in an appropriate context as a service to people when they need to find official U.S. government foreign affairs agency data or multimedia content.
 
 ####Licensing
 
 U.S. Federal data and content available through cxp.bbg.gov is offered free and without restriction. Data and content created by government employees within the scope of their employment are not subject to domestic copyright protection under 17 U.S.C. § 105.
 
-Non-federal data and content available through oddi.bbg.gov/cxp/ and the cxp.bbg.gov API may have a different licensing method. BBG and cxp.bbg.gov cannot authorize the use of copyrighted materials that may be available through accessing oddi.bbg.gov/cxp/ or the cxp.bbg.gov API. Users must request such authorization from the provider of the content.
+Non-federal data and content available through oddi.bbg.gov/cxp/ and the cxp.bbg.gov API may have a different licensing method. BBG and cxp.bbg.gov cannot authorize the use of copyrighted materials that may be available through accessing the oddi.bbg.gov/cxp/ website or the cxp.bbg.gov API. Users must request such authorization from the provider of the content.
 
-All content accessed through oddi.bbg.gov/cxp or the cxp.bbg.gov API are confined to public information and must not contain National Security information as defined by statute and/or Executive Order, or other information/data that is protected by other statute, practice, or legal precedent. The supplying Department/Agency is required to maintain currency with public disclosure requirements.
+All content accessed through the oddi.bbg.gov/cxp/ website or the cxp.bbg.gov API are confined to public information and must not contain National Security information as defined by statute and/or Executive Order, or other information/data that is protected by other statute, practice, or legal precedent. The supplying Department/Agency is required to maintain currency with public disclosure requirements.
 
 ####Digital Millennium Copyright Act Notice
 
@@ -32,7 +32,7 @@ Content retrieved from cxp.bbg.gov (https://www.cxp.bbg.gov/)
 
 ####Secondary Use
 
-Content accessed through oddi.bbg.gov/cxp or the cxp.bbg.gov API does not, and should not, include controls over its end use. Once the content has been downloaded from the agency's site, the government cannot vouch for their quality and timeliness. Furthermor, the BBG and the U.S. Government cannot vouch for any analyses conducted with content retrieved from oddi.bbg.gov or the cxp.bbg.gov API.
+Content accessed through oddi.bbg.gov/cxp or the cxp.bbg.gov API does not, and should not, include controls over its end use. Once the content has been downloaded from the agency's site, the government cannot vouch for their quality and timeliness. Furthermor, the BBG and the U.S. Government cannot vouch for any analyses conducted with content retrieved from the oddi.bbg.gov/cxp/ website or the cxp.bbg.gov API.
 
 ####Disclaimer of Endorsement
 
