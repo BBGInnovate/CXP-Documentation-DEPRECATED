@@ -16,6 +16,15 @@ angular.module('JsonFormatter').config(['$routeProvider', function($routeProvide
 			templateUrl: 'templates/signup.html',
 			controller: 'SignUpCtrl'
 		}).
+		when('/about', {
+			templateUrl: 'templates/about.html'
+		}).
+		when('/privacy-policy', {
+			templateUrl: 'templates/privacy-policy.html'
+		}).
+		when('/data-policy', {
+			templateUrl: 'templates/data-policy.html'
+		}).
 		otherwise({
 			redirectTo: '/docs'
 		});

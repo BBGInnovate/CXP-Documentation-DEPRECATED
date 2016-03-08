@@ -84,7 +84,7 @@ angular.module('JsonFormatter').factory('APIData', ['$http', '$q', function($htt
 			return $q.all([
 				// $q will keep the list of promises in a array
 		//		$http.get('http://cxp.bbg.gov/bbg/search?api_key='+API_KEY + queryString)
-				$http.get('http://cxp.bbg.gov/api/'+controller+'/?api_key='+ apiKey + queryString, {handleError:true})
+				$http.get('https://cxp.bbg.gov/api/'+controller+'/?api_key='+ apiKey + queryString, {handleError:true})
 
 			]).then(function (results) {
 				return results;
